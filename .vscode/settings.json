@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "vector": "cpp"
+    },
+
+    "editor.minimap.maxColumn": 120,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "xaver.clang-format",
+    "editor.tabSize": 2,
+    "clang-format.fallbackStyle": "llvm",
+    "clang-format.language.cpp.style": "file",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.intelliSenseEngine":"Default",
+}
