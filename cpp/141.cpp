@@ -8,7 +8,7 @@ struct ListNode {
 
 class Solution {
 public:
-  bool hasCycle2(ListNode *head) {
+  bool hasCycle(ListNode *head) {
     ListNode *slow = head;
     ListNode *fast = nullptr;
 
