@@ -16,8 +16,6 @@ public:
     while (p != nullptr) {
       p = p->next;
       ++cnt;
-
-      std::cout << "11111" << std::endl;
     }
 
     if (k > cnt) {
@@ -30,22 +28,41 @@ public:
     while (k > 0) {
       fast = fast->next;
       --k;
-      std::cout << "22222" << std::endl;
     }
 
-    while (fast != nullptr) {
+    while (fast->next != nullptr) {
       fast = fast->next;
       slow = slow->next;
-      std::cout << "33333" << std::endl;
     }
 
+    ListNode *t = slow->next;
+
     ListNode *node1 = reverse(head, slow);
-    ListNode *node2 = reverse(slow->next, fast);
+
+    // log start
+    ListNode *temp = node1;
+    std::cout << "node1" << std::endl;
+    while (temp != nullptr) {
+      std::cout << temp->val << std::endl;
+      temp = temp->next;
+    }
+    // log end
+
+    ListNode *node2 = reverse(t, fast);
+
+    // log start
+    temp = node2;
+    std::cout << "node2" << std::endl;
+    while (temp != nullptr) {
+      std::cout << temp->val << std::endl;
+      temp = temp->next;
+    }
+    // log end
+
     ListNode *newHead = node2;
 
     while (node2->next != nullptr) {
       node2 = node2->next;
-      // std::cout << "44444" << std::endl;
     }
 
     node2->next = node1;
@@ -73,7 +90,7 @@ public:
     }
     // temp->next = currnet;
     next->next = currnet;
-    return temp;
+    return next;
   }
 };
 
@@ -100,6 +117,7 @@ int main() {
 
   ListNode *node = solution->rotateRight(node1, 2);
 
+  std::cout << "merge result" << std::endl;
   while (node != nullptr) {
     std::cout << node->val << std::endl;
     node = node->next;
